@@ -5,5 +5,5 @@ export async function getDb(): Promise<Db | null> {
   const uri = process.env.MONGODB_URI;
   if (!uri) return null;
   g._mongo ??= new MongoClient(uri).connect();
-  return (await g._mongo).db(process.env.MONGODB_DB ?? "waypoint");
+  return (await g._mongo).db(process.env.MONGODB_DB ?? "kentorex");
 }

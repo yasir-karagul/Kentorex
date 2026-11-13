@@ -1,6 +1,6 @@
-# waypoint — Project handbook
+# kentorex — Project handbook
 
-waypoint is a private, multi-project documentation workspace. Every registered account can create projects and manage their modules and notes from the project pages—there is no admin role or separate admin dashboard.
+kentorex is a private, multi-project documentation workspace. Every registered account can create projects and manage their modules and notes from the project pages—there is no admin role or separate admin dashboard.
 
 ## Run locally
 
@@ -42,13 +42,13 @@ The browser uses these authenticated endpoints:
 - `POST /api/content/images` with `project` and one or more `files` multipart fields; `GET /api/content/images/<id>?project=<slug>` serves authenticated project images
 - `POST /api/files/import` with `project` and `file` multipart fields for UTF-8 text files
 
-Module and project payloads are validated with Zod in `lib/schemas.ts`. MongoDB is required for accounts, sessions, and saved content; waypoint does not use a read-only seed fallback.
+Module and project payloads are validated with Zod in `lib/schemas.ts`. MongoDB is required for accounts, sessions, and saved content; kentorex does not use a read-only seed fallback.
 
 The interface uses Next.js, React, TypeScript, Tailwind CSS, Radix UI, TanStack Query, Zustand, Zod, and MongoDB. Add shadcn/ui components with `npx shadcn@latest add <name>`; `components.json` is configured.
 
 ## Account verification setup (free services; no custom domain required)
 
-New registrations use the existing MongoDB-backed password and session system. Firebase Authentication sends the verification email using its built-in email delivery; the app does not use Resend or another mail provider. Firebase stores a separate verification identity with a randomly generated, undisclosed password, so a user's waypoint password is not copied to Firebase. A Firebase Admin check synchronizes the verified state at sign-in, and protected pages/APIs reject accounts whose stored verification state is false.
+New registrations use the existing MongoDB-backed password and session system. Firebase Authentication sends the verification email using its built-in email delivery; the app does not use Resend or another mail provider. Firebase stores a separate verification identity with a randomly generated, undisclosed password, so a user's kentorex password is not copied to Firebase. A Firebase Admin check synchronizes the verified state at sign-in, and protected pages/APIs reject accounts whose stored verification state is false.
 
 Existing accounts are not migrated or modified by this change: users with no `emailVerified` field remain compatible with their current passwords, sessions, data, and access. Only new accounts require verification. This avoids forcing a disruptive authentication migration.
 
@@ -71,7 +71,7 @@ Set these in `.env.local` for development and in the Vercel project's environmen
 | Variable | Required | Description |
 | --- | --- | --- |
 | `MONGODB_URI` | Yes | Private MongoDB connection string used for accounts, sessions, content, and authentication rate limits. |
-| `MONGODB_DB` | No | Database name; defaults to `waypoint`. |
+| `MONGODB_DB` | No | Database name; defaults to `kentorex`. |
 | `APP_URL` | Yes | Canonical website origin, e.g. `https://your-app.vercel.app`; verification redirects to `/verify-email`. |
 | `FIREBASE_PROJECT_ID` | Yes | Firebase project ID. |
 | `FIREBASE_API_KEY` | Yes | Firebase project's Web API key, used server-side for Firebase Identity Toolkit email delivery. |

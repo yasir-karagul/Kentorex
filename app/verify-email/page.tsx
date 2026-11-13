@@ -9,9 +9,9 @@ export default function VerifyEmailPage() {
           <MailCheck className="size-6" />
         </span>
         <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Email verification</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight">Return to waypoint</h1>
+        <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight">Return to kentorex</h1>
         <p className="mt-3 text-sm leading-6 text-muted">
-          If you just completed the verification link, your email is ready. Sign in to continue; waypoint checks verification with Firebase before granting access.
+          If you just completed the verification link, your email is ready. Sign in to continue; kentorex checks verification with Firebase before granting access.
         </p>
         <Link href="/login" className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#214e3c]">
           Go to sign in <ArrowRight className="size-4" />

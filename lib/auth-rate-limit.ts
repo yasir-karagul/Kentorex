@@ -34,7 +34,7 @@ async function rateLimitCollection(): Promise<Collection<RateLimitRecord>> {
 }
 
 function fingerprint(value: string): string {
-  return createHmac("sha256", process.env.MONGODB_URI ?? "waypoint-rate-limit")
+  return createHmac("sha256", process.env.MONGODB_URI ?? "kentorex-rate-limit")
     .update(value)
     .digest("hex");
 }

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: { default: "waypoint — Project handbook", template: "%s · waypoint" },
+  title: { default: "kentorex — Project handbook", template: "%s · kentorex" },
   description: "A thoughtful home for the systems, decisions, and details behind every project you build.",
 };
 

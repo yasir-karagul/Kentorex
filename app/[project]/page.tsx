@@ -176,7 +176,7 @@ export default async function ProjectHome({ params }: { params: Promise<{ projec
       <CodeBrowser project={project} documentationHref="#module-library" />
 
       <footer className="mt-12 flex flex-wrap items-center justify-between gap-2 border-t border-line py-5 text-xs text-muted">
-        <span>waypoint is your adaptable project documentation starter.</span>
+        <span>kentorex is your adaptable project documentation starter.</span>
         <span className="font-mono">Made to grow with your work</span>
       </footer>
     </div>

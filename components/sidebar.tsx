@@ -60,7 +60,7 @@ export function Sidebar({ project, projectName, user }: { project: string; proje
       <header className="sticky top-0 z-20 flex items-center justify-between border-b border-line/80 bg-bg/90 px-4 py-3 backdrop-blur lg:hidden">
         <Link href={`/${project}`} onClick={() => setMenu(false)} className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
           <span className="grid size-8 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>
-          waypoint
+          kentorex
         </Link>
         <button aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenu(!menuOpen)} className="rounded-xl border border-line bg-panel p-2 hover:bg-soft">
           {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -70,7 +70,7 @@ export function Sidebar({ project, projectName, user }: { project: string; proje
         <Link href={`/${project}`} onClick={() => setMenu(false)} className="mb-7 hidden items-center gap-3 px-2 lg:flex">
           <span className="grid size-10 place-items-center rounded-2xl bg-accent text-white shadow-sm shadow-accent/20"><Layers3 className="size-5" /></span>
           <span className="min-w-0">
-            <span className="block font-display text-xl font-bold leading-none tracking-tight">waypoint</span>
+            <span className="block font-display text-xl font-bold leading-none tracking-tight">kentorex</span>
             <span className="mt-1 block truncate text-xs text-muted">{projectName}</span>
           </span>
           <ArrowUpRight className="ml-auto size-4 text-muted" />

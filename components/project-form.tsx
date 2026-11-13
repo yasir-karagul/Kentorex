@@ -47,8 +47,8 @@ export function ProjectForm({ hasProjects }: { hasProjects: boolean }) {
     <div className="min-h-screen px-4 py-8 sm:px-8">
       <header className="mx-auto flex max-w-5xl items-center justify-between">
         {hasProjects
-          ? <Link href="/" className="inline-flex items-center gap-2 font-display text-xl font-semibold tracking-tight"><span className="grid size-9 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>waypoint</Link>
-          : <span className="inline-flex items-center gap-2 font-display text-xl font-semibold tracking-tight"><span className="grid size-9 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>waypoint</span>}
+          ? <Link href="/" className="inline-flex items-center gap-2 font-display text-xl font-semibold tracking-tight"><span className="grid size-9 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>kentorex</Link>
+          : <span className="inline-flex items-center gap-2 font-display text-xl font-semibold tracking-tight"><span className="grid size-9 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>kentorex</span>}
         <SignOutButton />
       </header>
       <main className="mx-auto mt-16 max-w-2xl">

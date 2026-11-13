@@ -5,3 +5,5 @@ node_modules
 waypoint-credentials.env
 *-credentials.env
 *.tsbuildinfo
+waypoint-b63a5-firebase-adminsdk-fbsvc-432f34fc9d.json
+FirebaseConfiguration.md

@@ -11,7 +11,7 @@ import {
 import { DuplicateAccountError } from "./auth-errors";
 import { getDb } from "./mongo";
 
-const COOKIE_NAME = "waypoint_session";
+const COOKIE_NAME = "kentorex_session";
 const SESSION_LIFETIME_MS = 1000 * 60 * 60 * 24 * 14;
 
 type StoredUser = {
@@ -111,7 +111,7 @@ export async function verifyCredentials(email: string, password: string): Promis
   const db = await authDb();
   const user = await db.collection<StoredUser>("users").findOne({ email });
   if (!user) {
-    await passwordDigest(password, "waypoint-invalid-account-check");
+    await passwordDigest(password, "kentorex-invalid-account-check");
     return null;
   }
   const actual = await passwordDigest(password, user.passwordSalt);

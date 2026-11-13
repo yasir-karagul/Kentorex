@@ -90,7 +90,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         <div aria-hidden className="absolute -bottom-48 -left-36 size-[500px] rounded-full border border-white/10" />
         <Link href="/login" className="relative inline-flex w-fit items-center gap-3">
           <span className="grid size-11 place-items-center rounded-2xl bg-white/10"><Layers3 className="size-5" /></span>
-          <span className="font-display text-2xl font-semibold tracking-tight">waypoint</span>
+          <span className="font-display text-2xl font-semibold tracking-tight">kentorex</span>
         </Link>
         <div className="relative max-w-xl pb-8">
           <span className="mb-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/65"><span className="h-px w-5 bg-[#e6a180]" /> A little more clarity</span>
@@ -104,7 +104,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         <div className="w-full max-w-[430px]">
           <Link href="/login" className="mb-12 inline-flex items-center gap-2 font-display text-xl font-semibold tracking-tight lg:hidden">
             <span className="grid size-9 place-items-center rounded-xl bg-accent text-white"><Layers3 className="size-4" /></span>
-            waypoint
+            kentorex
           </Link>
           <div className="mb-8">
             <span className="mb-4 grid size-11 place-items-center rounded-2xl bg-soft text-accent"><KeyRound className="size-5" /></span>
@@ -112,7 +112,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
               {registrationComplete ? "One more step" : isRegister ? "Start your workspace" : "Welcome back"}
             </p>
             <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">
-              {registrationComplete ? "Check your inbox" : isRegister ? "Create your account" : "Sign in to waypoint"}
+              {registrationComplete ? "Check your inbox" : isRegister ? "Create your account" : "Sign in to kentorex"}
             </h2>
             <p className="mt-2 text-sm leading-6 text-muted">
               {registrationComplete
@@ -164,7 +164,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
               </form>
               {needsVerification && <ResendVerificationForm initialEmail={email} />}
               <p className="mt-6 text-center text-sm text-muted">
-                {isRegister ? "Already have an account?" : "New to waypoint?"}{" "}
+                {isRegister ? "Already have an account?" : "New to kentorex?"}{" "}
                 <Link href={isRegister ? "/login" : "/register"} className="font-medium text-accent hover:underline">{isRegister ? "Sign in" : "Create an account"}</Link>
               </p>
             </>
