@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 248 243;
+  --panel: 255 255 255;
+  --ink: 30 43 37;
+  --muted: 111 124 115;
+  --line: 224 229 220;
+  --accent: 43 101 78;
+  --mark: 224 109 74;
+  --soft: 237 242 234;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 86% 0%, rgb(var(--soft) / 0.72), transparent 34rem),
+    rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  color: rgb(var(--panel));
+  background: rgb(var(--accent));
+}
+
+.soft-scrollbar {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scrollbar-color: rgb(43 101 78 / 0.3) transparent;
+  scrollbar-width: thin;
+}
+
+.soft-scrollbar::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.soft-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.soft-scrollbar::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgb(43 101 78 / 0.28);
+  background-clip: padding-box;
+}
+
+.soft-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(43 101 78 / 0.46);
+  background-clip: padding-box;
+}
+
+.doc-editor {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.doc-editor:empty::before {
+  color: rgb(var(--muted) / 0.75);
+  content: attr(data-placeholder);
+  pointer-events: none;
+}
+
+.doc-editor-image {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  margin: 0.35rem 0.5rem 0.35rem 0;
+  vertical-align: middle;
+}
+
+.doc-editor-image img {
+  display: block;
+  max-height: 22rem;
+  max-width: min(100%, 34rem);
+  border: 1px solid rgb(var(--line));
+  border-radius: 0.75rem;
+  object-fit: contain;
+}
+
+.doc-editor-image button {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 0.7);
+  border-radius: 999px;
+  background: rgb(30 43 37 / 0.78);
+  color: white;
+  font: inherit;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.doc-editor-image:hover button,
+.doc-editor-image button:focus-visible {
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--mark));
+  outline-offset: 3px;
+}
+
+.markdown-body {
+  max-width: 80ch;
+  color: #59675d;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.markdown-body > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: rgb(var(--ink));
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 { margin: 2rem 0 1rem; font-size: 1.5rem; }
+.markdown-body h2 { margin: 1.75rem 0 0.75rem; font-size: 1.25rem; }
+.markdown-body h3 { margin: 1.5rem 0 0.5rem; font-size: 1.125rem; }
+.markdown-body p,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body blockquote,
+.markdown-body pre,
+.markdown-body table { margin: 0 0 1rem; }
+.markdown-body ul,
+.markdown-body ol { padding-left: 1.5rem; }
+.markdown-body ul { list-style: disc; }
+.markdown-body ol { list-style: decimal; }
+.markdown-body li { margin: 0.25rem 0; padding-left: 0.25rem; }
+.markdown-body a { color: rgb(var(--accent)); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
+.markdown-body blockquote { border-left: 2px solid rgb(var(--accent) / 0.3); padding-left: 1rem; font-style: italic; }
+.markdown-body code { border-radius: 0.25rem; background: rgb(var(--bg)); padding: 0.125rem 0.375rem; font-family: var(--font-mono), monospace; font-size: 0.85em; }
+.markdown-body pre { overflow-x: auto; border-radius: 0.75rem; background: #1e2b25; padding: 1rem; color: white; }
+.markdown-body pre code { background: transparent; padding: 0; color: inherit; }
+.markdown-body hr { margin: 1.5rem 0; border-color: rgb(var(--line)); }
+.markdown-body table { display: block; width: 100%; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.markdown-body th,
+.markdown-body td { border: 1px solid rgb(var(--line)); padding: 0.5rem 0.75rem; text-align: left; }
+.markdown-body th { background: rgb(var(--bg)); color: rgb(var(--ink)); font-weight: 600; }
+.markdown-body img { height: auto; }
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
